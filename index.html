@@ -10,8 +10,31 @@
         <!-- BOOTSTRAP -->
         <script>
             window.onload = function() {
-                wildwar.bootstrap();
+                document.addEventListener("click", start, { once: true });
+                document.addEventListener("keydown", start, { once: true });
+
+                function start() {
+                    document.getElementById("startscreen").remove();
+                    wildwar.bootstrap();
+                }
             };
         </script>
     </head>
+    <body>
+        <div id="startscreen" style="
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            z-index: 999;
+        ">
+            Click or press any key to start
+        </div>
+    </body>
 </html>
